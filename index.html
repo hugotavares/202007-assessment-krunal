@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Krunal Patel assessment </title>
+      <link href="css/style.css" rel="stylesheet" type="text/css" />
+      <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+      <script type="text/javascript">       
+         $(document).ready(function () {       
+         
+            
+                 var time = 0; 
+                 
+                 $('.parallax-slider > .slide').each(function() {
+                     var $id = $(this).attr('id');
+                     
+                     setTimeout(function parallax() {
+                         
+                         var current = $id;
+                         $('.slide, .slide-content').hide(); // Hide all slide at the beginning
+                         $('#' + current).children().removeAttr("style"); //reset inline style
+                         $('#' + current).show(); 
+                         var position0 = 0;
+                         var positionmiddle = 30;                             
+                         
+                            // each slide animation start from here
+                             $('#' + current).find(".layer1").animate({ "top": position0 }, 1000);
+                             $('#' + current).find(".layer2").animate({ "top": positionmiddle + '%' }, 3000);
+                             $('#' + current).find(".slide-content").delay(3000).fadeIn(500);   
+                             $('#' + current).find(".layer3").animate({ "top": position0 }, 1000,
+                                 function(){ // Hide layers again
+                                    $('#' + current).find(".layer1").delay(4000).animate({ "top": '-360px' }, 1000);
+                                    $('#' + current).find(".layer2").delay(2000).fadeOut(500); 
+                                    $('#' + current).find(".layer3").delay(4000).animate({ "top": '-360px' }, 1000);
+                                    $('#' + current).find(".slide-content").delay(1500).fadeOut(500);   
+                                 }
+                             );
+          
+                     }, time)
+                     time += 6000;  
+                 });    
+                 
+   
+         
+         });
+         
+         
+      </script>
+   </head>
+   <body>
+      <div class="parallax-slider">
+
+        <!-- Fisrt Slide Start from here-->
+         <section class="slide" id="slide1">
+            <img src="images/bg_1.jpg" class="layer1" width="100%" alt="">
+            <h1 class="slide-title layer2" >Go Beyond</h1>
+            <img src="images/bg_2_font_layer_trans.png" class="layer slider-forground layer3" width="100%" alt="">
+            <div class="slide-content">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />Cum nemo laboriosam quas rerum odit
+                  ullam inventore labore illo nulla,
+               </p>
+               <a href="#" class="more-link">Find out here</a>
+            </div>
+         </section>
+         <!-- Fisrt Slide End here-->
+
+         <!-- Second Slide Start from here-->
+         <section class="slide" id="slide2">
+            <img src="images/bg_2.jpg" class="layer1" width="100%" alt="">
+            <h1 class="slide-title layer2" >Discover</h1>
+            <img src="images/bg_2_font_layer_trans.png" class="layer slider-forground layer3" width="100%" alt="">
+            <div class="slide-content">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />Cum nemo laboriosam quas rerum odit
+                  ullam inventore labore illo nulla,
+               </p>
+               <a href="#" class="more-link">Find out here</a>
+            </div>
+         </section>
+         <!-- Second Slide End here-->
+
+         <!-- Third Slide Start from here-->
+         <section class="slide" id="slide3">
+            <img src="images/bg_3.jpg" class="layer1" width="100%" alt="">
+            <h1 class="slide-title layer2">slide 3</h1>
+            <img src="images/bg_3_front_layer.png" class="layer slider-forground layer3" width="100%" alt="">
+            <div class="slide-content">
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />Cum nemo laboriosam quas rerum odit
+                  ullam inventore labore illo nulla,
+               </p>
+               <a href="#" class="more-link">Find out here</a>
+            </div>
+         </section>
+         <!-- Third Slide End here-->
+      </div>
+   </body>
+</html>
