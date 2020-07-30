@@ -1,56 +1,45 @@
-body 
-{
-    margin: 0px;
-    padding:0px;
-    font-family: helvetica, sans-serif;
-    font-size: 15px;
-    letter-spacing:1px;
-    background: #ccc;
-} 
-
-
-.fr{float:right;}
-.fl{float:left;}
-
-
-.parallax-slider{height: 355px; background:#fff;   overflow: hidden;}
-.slide{
-    width:100%;
-    height:355px;
-    position:relative;
-    overflow: hidden;
-    display:none;
-}
-.slide-title{width: 100%;
-    margin: 0px;
-    padding: 10px;
+body {
+    font: 16px/1.5 'Open Sans', Helvetica, Helvetica Neue, Arial, sans-serif;
+    color: rgba(0, 0, 0, 0.9);
+  }
+   
+  html, body {
+    height: 100%;
+    margin: 0; 
+  }
+   
+   
+    
+  section {
+    height: 100%;
+    position: relative;
     text-align: center;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight:bold;
-    color: #fff;
-    font-size: 80px;
-    text-transform: uppercase;}
-    .slide-content{display:none;position: absolute;
-        z-index: 9;
-        text-align: center;
-        bottom: 10%;
-        width: 100%;
-    }
-        .slide-content p{width: 80%;
-            color: #b0b4bc;
-            font-size: 14px;
-            margin: 0px auto;
-            padding: 20px;}
-            .more-link{background: #405c6a; color:#fff;padding: 12px 17px;
-                font-size: 14px; border:0px; text-decoration: none;
-                
-                display: inline-block;
-                -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;}
-.parallax-slider img{position: absolute; bottom:0px;}
-.layer1{top:355px;     position: absolute;   z-index: 1;}
-.layer2{top:355px;     position: absolute;   z-index: 8;}
-.layer3{top:355px;     position: absolute;   z-index: 9;}
-
-
+  }
+   
+   
+   
+  /* iPhone/Card positioned to the left - this is a default position */
+  .slide { width: 100%; height: 355px; border-radius: 10px; position: fixed; top: 0; left: 0;  }
+  
+  
+  /* Centered content of the ScrollMagic card */
+  .slide1 .layer { margin: 0; position: absolute; width:100%; top: 0px; left: 0px; }
+  .slide2 .layer{margin: 0; position: absolute;top:-355px;}
+  .slide3 .layer{margin: 0; position: absolute;top:-700px;}
+  
+  .slide1 h2{ margin: 0; position: absolute;  width:100%;  top: 0px;  left: 0px; font-family: 'Roboto Condensed', sans-serif;  font-weight: bold;  color: #fff; font-size: 80px;	text-transform:uppercase;}
+  .slide2 h2{margin: 0;position: absolute; width:100%; bottom: -385px; left: 0px;font-family: 'Roboto Condensed', sans-serif;    font-weight: bold;    color: #fff;    font-size: 80px;	text-transform:uppercase;}
+  .slide3 h2{margin: 0;position: absolute; width:100%; bottom: -685px; left: 0px;font-family: 'Roboto Condensed', sans-serif;    font-weight: bold;    color: #fff;    font-size: 80px;	text-transform:uppercase;}
+  
+      
+  
+  /* ScrollMagic hat on top of letters */
+  
+  .slide div img {
+    max-width: 100%;
+  } 
+   .detail1, .detail2, .detail3 {z-index:9; bottom:0px; position:absolute; width: 100%;}
+   .detail1 p, .detail2 p, .detail3 p{color:#fff; width: 80%;   margin: 18px auto;   font-size: 14px;}
+    
+   .slider-link-btn{background: #405c6a;  color: #fff;  padding: 12px 17px;  font-size: 14px;   border: 0px;  text-decoration: none; display: inline-block;  -webkit-border-radius: 30px;  -moz-border-radius: 30px; border-radius: 30px;}
+  .overlay-hidden{position: fixed; background: #fff; height: 43%; width: 100%; bottom: 0px;}
